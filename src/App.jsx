@@ -4,6 +4,8 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import CityDetails from './pages/CityDetails';
 import AuthWrapper from './auth/AuthWrapper';
+import Favorites from "./pages/Favorites.jsx";
+
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/city/:name" element={<CityDetails />} />
+        <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </AuthWrapper>
   );

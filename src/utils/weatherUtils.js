@@ -1,20 +1,26 @@
 export const getCardBgColor = (condition) => {
-    switch (condition.toLowerCase()) {
-        case 'clear':
-            return 'bg-yellow-400';
-        case 'clouds':
-            return 'bg-gray-400';
-        case 'rain':
-        case 'drizzle':
-            return 'bg-blue-700';
-        case 'thunderstorm':
-            return 'bg-purple-700';
-        case 'snow':
-            return 'bg-white text-black';
-        case 'mist':
-        case 'haze':
-            return 'bg-gray-300 text-black';
-        default:
-            return 'bg-blue-500';
-    }
+    if (!condition) return 'bg-blue-500';
+
+    condition = condition.toLowerCase();
+
+    if (condition.includes('clear'))
+        return 'bg-yellow-400';
+
+    if (condition.includes('cloud'))
+        return 'bg-gray-400';
+
+    if (condition.includes('rain') || condition.includes('drizzle'))
+        return 'bg-blue-700';
+
+    if (condition.includes('thunderstorm'))
+        return 'bg-purple-700';
+
+    if (condition.includes('snow'))
+        return 'bg-white text-black';
+
+    if (condition.includes('mist') || condition.includes('haze'))
+        return 'bg-gray-300 text-black';
+
+
+    return 'bg-blue-500';
 };
